@@ -2,7 +2,6 @@ import 'package:booklyapp/Features/home/presentaion/views/widgets/custom_app_bar
 import 'package:booklyapp/Features/home/presentaion/views/widgets/featured_list_view.dart';
 import 'package:booklyapp/core/utils/assets_data.dart';
 import 'package:booklyapp/core/utils/styles.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class HomeViewBody extends StatelessWidget {
@@ -22,7 +21,7 @@ class HomeViewBody extends StatelessWidget {
           ),
           Text(
             'Best Seller',
-            style: Styles.titelMedium,
+            style: Styles.textStyle18,
           ),
           BestSellerListViewItem(),
         ],
