@@ -65,7 +65,7 @@ class _SplashViewBodyState extends State<SplashViewBody>
       duration: const Duration(seconds: 1),
     );
 
-    slidingAnimaton = Tween<Offset>(begin: const Offset(0, 5), end: Offset.zero)
+    slidingAnimaton = Tween<Offset>(begin: const Offset(0, 3), end: Offset.zero)
         .animate(animationController);
     animationController.forward();
   }
