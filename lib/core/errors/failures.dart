@@ -9,7 +9,7 @@ abstract class Failure {
 class ServerFailure extends Failure {
   ServerFailure(super.errorMessage);
 
-  factory ServerFailure.DioException(DioException dioException) {
+  factory ServerFailure.dioException(DioException dioException) {
     switch (dioException.type) {
       case DioExceptionType.connectionTimeout:
         return ServerFailure('Connection timeout with ApiServer');
@@ -21,7 +21,7 @@ class ServerFailure extends Failure {
 
       case DioExceptionType.badCertificate:
       case DioExceptionType.badResponse:
-        return ServerFailure.FromResponse(
+        return ServerFailure.fromResponse(
             dioException.response!.statusCode!, dioException.response!.data);
       case DioExceptionType.unknown:
       case DioExceptionType.cancel:
@@ -37,7 +37,7 @@ class ServerFailure extends Failure {
     }
   }
 
-  factory ServerFailure.FromResponse(int statusCode, dynamic response) {
+  factory ServerFailure.fromResponse(int statusCode, dynamic response) {
     if (statusCode == 400 || statusCode == 401 || statusCode == 403) {
       return ServerFailure(response['error']['message']);
     } else if (statusCode == 404) {
